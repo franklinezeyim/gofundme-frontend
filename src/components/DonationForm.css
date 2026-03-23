@@ -1,43 +1,100 @@
-.donation-form {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+.donation-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.donation-form.card-glass {
+  max-width: 500px;
+  width: 100%;
+  padding: 3rem 2rem;
+  border-top: 4px solid var(--secondary-color);
+  text-align: center;
 }
 
 .donation-form h2 {
-  margin-bottom: 10px;
-  font-size: 24px;
+  font-size: 2.2rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
-.donation-input-box{
+.subtitle {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+.donation-input-box {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  gap: 1.5rem;
 }
 
-.donation-form input {
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  outline-color: #40ad57;
-  border-radius: 4px;
+.input-field {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 0.5rem;
 }
 
-.donation-form button {
-  background-color: #40ad57;
+.input-field label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-left: 0.2rem;
+}
+
+.input-field input {
+  padding: 1.2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: rgba(15, 23, 42, 0.5);
   color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 10px;
-  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  width: 100%;
 }
 
-.donation-form button:hover {
-  background-color: #188044;
+.input-field input:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(236, 72, 153, 0.2);
+  outline: none;
+  background: rgba(15, 23, 42, 0.8);
 }
 
-.success-message{
-  color: #40ad57;
+.donate-btn {
+  background: linear-gradient(135deg, var(--secondary-color), #be185d);
+  font-size: 1.15rem;
+  padding: 1.2rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.donate-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(236, 72, 153, 0.4);
+}
+
+.donate-btn.processing {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Chrome, Safari, Edge, Opera hide arrows on number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
